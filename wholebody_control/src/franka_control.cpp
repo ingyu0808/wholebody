@@ -43,7 +43,7 @@ public:
           if (msg->data.size() == 7) {
             for (size_t i = 0; i < 7; i++) {
               joint_velocities_[i] = msg->data[i];
-              RCLCPP_INFO(this->get_logger(), "Received joint velocity: %f", joint_velocities_[i]);
+              RCLCPP_INFO(this->get_logger(), "Joint[%d] velocity: %f", i, joint_velocities_[i]);
             }
 
             bridge_ptr_->pushBridgeBuffer(joint_velocities_);
